@@ -18,7 +18,6 @@ public class TestApp {
     static void setUpAll() {
         WebDriverManager.chromedriver().setup();
         //System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
-        //System.setProperty("webdriver.chrome.driver", "driver/linux/chromedriver");
     }
 
     @BeforeEach
@@ -119,6 +118,18 @@ public class TestApp {
 
         String expected = elements.get(1).getText();
         String actual = "Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testCheckBox() {
+        driver.findElement(By.name("name")).sendKeys("Михаил Салтыков-Щедрин");
+        driver.findElement(By.name("phone")).sendKeys("+79201234567");
+        driver.findElement(By.className("button__text")).click(); // Отправить
+
+        String actual = driver.findElement(By.cssSelector("[data-test-id=agreement].input_invalid .checkbox__text")).getText();
+        String expected = "Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй";
 
         assertEquals(expected, actual);
     }
