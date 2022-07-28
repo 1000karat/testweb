@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/vleqok154lnw15fe?svg=true)](https://ci.appveyor.com/project/1000karat/testweb)
