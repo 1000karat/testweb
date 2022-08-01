@@ -4,6 +4,7 @@ HELP.md
 .gradle
 build/
 driver/
+*.bat
 
 ### STS ###
 .apt_generated
