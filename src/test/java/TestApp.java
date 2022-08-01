@@ -50,7 +50,6 @@ public class TestApp {
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79201234567");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("[role='button']")).click();
-        String text = driver.findElement(By.className("paragraph_theme_alfa-on-white")).getText();
 
         String actual = driver.findElement(By.cssSelector("[data-test-id='order-success']")).getText();
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
